@@ -1,15 +1,19 @@
 # Warehouse Social Portal  
-### SQL Vulnerability Demonstration, Forensic Analysis, and Remediation Lab
+## SQL Vulnerability Demonstration, Forensic Analysis, and Remediation Lab
 
 ---
 
-## Project Overview
+## Overview
 
-This project is a web-based application backed by an SQL database, designed to simulate an internal communication portal used in a warehouse or production environment.
+This project is a **web-based application backed by an SQL database**, designed to simulate an internal communication and logging portal used in a **warehouse or production environment**.
 
-The application intentionally includes common SQL-related security vulnerabilities to demonstrate how insecure database interactions can be exploited, how those attacks impact system data, and how digital forensic analysis can be used to investigate and remediate the incident.
+The application intentionally contains **SQL-related security vulnerabilities** to demonstrate how insecure database interactions can be exploited, how those attacks impact system data, and how **digital forensic analysis** can be used to investigate, document, and remediate security incidents.
 
-This project is implemented as a controlled lab environment and focuses on the full security lifecycle: system design, attack simulation, forensic investigation, and secure remediation.
+This repository represents a **controlled security lab** and demonstrates the **full security lifecycle**:
+- insecure design
+- attack simulation
+- forensic investigation
+- secure remediation and validation
 
 ---
 
@@ -19,35 +23,42 @@ The purpose of this project is to demonstrate practical knowledge of:
 
 - SQL-backed web application architecture
 - Common database attack techniques
-- Digital forensic investigation of web applications
-- Secure remediation and hardening techniques
+- Web application forensic investigation
+- Incident response and remediation
+- Secure coding and system hardening
 
-All vulnerabilities are intentional and exist solely for educational and defensive security purposes.
+All vulnerabilities are **intentional** and implemented solely for **educational and defensive security purposes**.
 
 ---
 
 ## Scenario Description
 
-The application simulates an internal social and logging system used by warehouse personnel to share updates, communicate shift information, and record operational notes.
+The application simulates an **internal social and operational logging system** used by warehouse personnel to:
 
-User roles include:
-- Employee
-- Supervisor
-- Administrator
+- share updates
+- communicate shift information
+- record operational notes
 
-The system stores operational and personnel-related data that would be considered sensitive in a real production environment.
+The system handles data that would be considered **sensitive** in a real production or warehouse environment.
+
+### User Roles
+- **Employee**
+- **Supervisor**
+- **Administrator**
+
+Each role has different access levels to application features and stored data.
 
 ---
 
 ## Technology Stack
 
 - **Frontend:** HTML, CSS  
-- **Backend:** [PHP / Python / Node.js]  
-- **Database:** [MySQL / MariaDB]  
+- **Backend:** PHP / Python / Node.js  
+- **Database:** MySQL / MariaDB  
 - **Environment:** Localhost (lab-only deployment)
 
 Optional components:
-- Application logging
+- Application-level logging
 - Database query logging
 
 ---
@@ -58,26 +69,32 @@ The application follows a standard web architecture:
 
 - Client-side HTML forms submit user input
 - Backend logic processes requests and interacts with the SQL database
-- The database stores user credentials, role information, and internal messages
+- The database stores user credentials, roles, and internal messages
 
-Initial versions of the application use insecure database queries to demonstrate real-world vulnerabilities.
+Initial versions of the application intentionally use **insecure database queries** to demonstrate real-world vulnerabilities.
 
 ---
 
 ## Database Design
 
-The database includes the following key tables:
+Key database tables include:
 
-- `users`  
-  Stores user credentials and role assignments
+### `users`
+- Stores user credentials
+- Role assignments
 
-- `posts`  
-  Stores internal messages and operational notes
+### `posts`
+- Internal messages
+- Operational notes
 
-- `logs`  
-  Records authentication and application events
+### `logs`
+- Authentication events
+- Application activity
 
-The database is intentionally configured with insufficient input validation and access controls during the initial phase of the project.
+During the vulnerable phase, the database is intentionally configured with:
+- insufficient input validation
+- weak access controls
+- excessive database privileges
 
 ---
 
@@ -85,18 +102,21 @@ The database is intentionally configured with insufficient input validation and 
 
 The following vulnerabilities are intentionally implemented and documented:
 
-- SQL Injection  
-  - Authentication bypass  
-  - Unauthorized data access  
+### SQL Injection
+- Authentication bypass
+- Unauthorized data extraction
 
-- Weak Authentication Controls  
-  - Insecure password storage  
+### Weak Authentication Controls
+- Insecure password storage
+- Poor credential handling
 
-- Insufficient Input Validation  
+### Insufficient Input Validation
+- Unsanitized user input
 
-- Excessive Database Privileges  
+### Excessive Database Privileges
+- Overly permissive database access
 
-These vulnerabilities reflect common issues found in poorly secured internal applications.
+These vulnerabilities reflect **common issues in poorly secured internal applications**.
 
 ---
 
@@ -105,28 +125,28 @@ These vulnerabilities reflect common issues found in poorly secured internal app
 Simulated attacks are conducted in a controlled lab environment to demonstrate:
 
 - Bypassing authentication mechanisms
-- Extracting unauthorized data from the database
-- Escalating access privileges
+- Extracting unauthorized data
+- Privilege escalation
 
-The goal of the attack phase is to observe system behavior and identify what forensic evidence is generated during exploitation.
+The goal of the attack phase is to observe system behavior and identify what **forensic evidence** is generated during exploitation.
 
 ---
 
 ## Forensic Analysis
 
-Digital forensic analysis focuses on identifying and reconstructing unauthorized activity using available evidence.
+Digital forensic analysis focuses on reconstructing unauthorized activity using available evidence.
 
-Analysis includes:
+### Analysis Activities
 - Review of application logs
 - Review of database query logs
 - Identification of anomalous authentication events
 
-Findings include:
+### Forensic Findings
 - Timeline reconstruction of unauthorized access
 - Identification of compromised accounts
-- Documentation of gaps in logging and monitoring
+- Documentation of logging and monitoring gaps
 
-This analysis highlights the importance of proper logging and visibility in production environments.
+This phase highlights the importance of **visibility and auditability** in production systems.
 
 ---
 
@@ -138,13 +158,13 @@ The simulated attacks demonstrate potential risks to:
 - **Integrity:** Unauthorized modification of stored information  
 - **Availability:** Potential disruption of internal systems  
 
-These impacts are evaluated within the context of a warehouse or production environment.
+All impacts are evaluated within the context of a warehouse or production environment.
 
 ---
 
 ## Remediation and Hardening
 
-After forensic analysis, the application is hardened using secure coding practices, including:
+Following forensic analysis, the application is secured using industry-standard practices:
 
 - Parameterized SQL queries
 - Secure password hashing
@@ -152,13 +172,11 @@ After forensic analysis, the application is hardened using secure coding practic
 - Input validation and sanitization
 - Improved logging and monitoring
 
-Following remediation, the original attack methods are reattempted to validate that vulnerabilities have been successfully mitigated.
-
 ---
 
 ## Validation
 
-Post-remediation testing confirms:
+Post-remediation testing confirms that:
 
 - SQL injection attempts are no longer effective
 - Unauthorized access is prevented
@@ -168,18 +186,18 @@ Post-remediation testing confirms:
 
 ## Ethical Notice
 
-This project is intended for educational and defensive security purposes only.
+This project is intended for **educational and defensive security purposes only**.
 
-The vulnerable version of this application must not be deployed in a production environment or exposed to the public internet.
+The vulnerable version of this application **must not** be deployed in a production environment or exposed to the public internet.
 
 ---
 
 ## Local Setup (Lab Environment)
 
-1. Clone the repository
-2. Configure database credentials
-3. Import the provided SQL schema
-4. Run the application locally using [XAMPP / Docker / etc.]
+1. Clone the repository  
+2. Configure database credentials  
+3. Import the provided SQL schema  
+4. Run the application locally using XAMPP, Docker, or an equivalent tool  
 
 ---
 
@@ -187,7 +205,7 @@ The vulnerable version of this application must not be deployed in a production 
 
 - SQL database design
 - Web application security testing
-- Digital forensic analysis
+- Digital forensic investigation
 - Incident response methodology
 - Secure application development
 
@@ -195,4 +213,4 @@ The vulnerable version of this application must not be deployed in a production 
 
 ## License
 
-This project is provided for educational use only.
+This project is provided for **educational use only**.
