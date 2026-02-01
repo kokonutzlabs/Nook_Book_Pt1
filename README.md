@@ -220,9 +220,7 @@ The intentionally vulnerable version **must not** be deployed in production or e
 ---
 
 ## Live Demo
-- [nookbook.com](https://raw.githack.com/kokonutzlabs/Animal-Crossing-Social-Portal/main/nook-book.html)
-
-- [nookbook2.com](https://raw.githack.com/kokonutzlabs/Animal-Crossing-Social-Portal/main/nook-book2.html)
+- [part1: setup](https://raw.githack.com/kokonutzlabs/Animal-Crossing-Social-Portal/main/part1:%20setup/index/nook-book2.html)
 
 
 ---
